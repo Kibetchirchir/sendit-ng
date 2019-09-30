@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `<div><h1> {{ pageTittle }}n</h1><div>My first component </div></div>`
 })
 export class AppComponent {
-  title = 'sendit-ng';
+  pageTittle: string = 'Send-IT'
 }
