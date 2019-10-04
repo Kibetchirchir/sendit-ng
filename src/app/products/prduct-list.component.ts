@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
+import { IProduct } from './product';
 
 
 @Component({
     selector: 'pm-products',
-    templateUrl: './product-list.component.html'
+    templateUrl: './product-list.component.html',
+    styleUrls: ['./products-list.component.css'] 
 })
 export class ProductListComponent{
     pageTitle: string = "Product List";
     imageWidth: number = 50;
     imageMargin: number = 2;
-    products: any[] = [
+    products: IProduct[] = [
         {
             "productId": 1,
             "productName": "Leaf Rake",
@@ -17,7 +19,7 @@ export class ProductListComponent{
             "releaseDate": "March 19, 2016",
             "description": "Leaf rake with 48-inch wooden handle.",
             "price": 19.95,
-            "starRating": 3.2,
+            "starRating": 12,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
         },
         {
