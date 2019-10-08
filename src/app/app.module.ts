@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/prduct-list.component';
 import { ConvertToSpaces } from './shared/conver-to-space.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ConvertToSpaces
+    ConvertToSpaces,
+    StarComponent
   ],
   imports: [
     BrowserModule,
