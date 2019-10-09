@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
 
-
+ 
 @Component({
     selector: 'pm-products',
     templateUrl: './product-list.component.html',
@@ -19,12 +19,19 @@ export class ProductListComponent implements OnInit{
     showImage: boolean = false;
     _listFilter: string;
     filteredProducts: IProduct[];
+    errorMessage: string;
 
     constructor(private productService: ProductService){
     }
 
     ngOnInit(): void{
-        this.products = this.productService.getProducts();
+        this.productService.getProducts().subscribe({
+            next: products => {
+                this.products = products
+                this.filteredProducts = this.products;          
+            } ,
+            error: err => this.errorMessage = err
+        })
         this.filteredProducts = this.products;
     }
 
