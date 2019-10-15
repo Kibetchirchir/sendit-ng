@@ -4,12 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap} from 'rxjs/operators';
 
 import { IProduct } from './product';
+import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProductService {
+    products: IProduct;
 
     private productUrl = 'assets/products.json'
 
@@ -22,6 +24,10 @@ export class ProductService {
             tap(data => console.log('All: ' + JSON.stringify(data))),
             catchError(this.handleError)
         );
+    }
+
+    getProduct(id: number){
+        
     }
 
     private handleError(err: HttpErrorResponse) {
