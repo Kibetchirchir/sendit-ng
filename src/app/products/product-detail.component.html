@@ -23,7 +23,15 @@
             </div>
             <div class='row'>
                 <div class='col-md-3'>Price:</div>
-                <div class='col-md-6'>{{product.price|currency:'USD':'true'}}</div>
+                <div class='col-md-6'>{{product.price|currency:'USD':true}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>5 Star Rating:</div>
+                <div class='col-md-6'>
+                    <app-star [rating]='product.starRating'
+                            (ratingClicked)='onRatingClicked($event)'>
+                    </app-star>
+                </div>
             </div>
         </div>
 
